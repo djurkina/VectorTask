@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+
+int main() {
+    std::vector<int> db(20);
+    int input, index = 0;
+
+    while (true) {
+        std::cout << "input number: ";
+        std::cin >> input;
+
+        if (input == -1) {
+            std::cout << "output: ";
+            for (int i = 0; i < 20; ++i) {
+                std::cout << db[i] << (i == 19 ? "" : " ");
+            }
+            std::cout << std::endl;
+        } else {
+            db[index] = input;
+            index = (index + 1) % 20;
+        }
+    }
+
+    return 0;
+}
+
